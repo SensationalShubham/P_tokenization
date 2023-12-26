@@ -23,7 +23,8 @@ contract ERC721Test is Test{
     }
 
     function test_whoIstheOwner() public{
-        address owner = erc721.getOwner(1);
+        erc721.mint();
+        address owner = erc721.getOwner(0);
         console.log(owner);
         assertEq(owner, 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266);
     }
@@ -35,4 +36,4 @@ contract ERC721Test is Test{
 }
 
 // address deploy 
-// 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+//0x5FbDB2315678afecb367f032d93F642f64180aa3

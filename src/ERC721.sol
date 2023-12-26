@@ -1,3 +1,5 @@
+// It's just a basic skeleton for ERC721 model
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
@@ -43,30 +45,25 @@ contract ERC721 {
         tokenId++;
     }
 
+        /**
+         * 
+         * @dev If the msg.sender is other than the one who owns the token, then he/she must have to be in the Approve list before transferring the token. 
+         */
     function safeTransferFrom(address from, address to, uint256 _tokenId) public {
         require(pause == true, "Under Maintainence");
         if (msg.sender == from) {
+            require(tokenOwners[_tokenId] == msg.sender, "You don't own this token");
             tokenOwners[_tokenId] = to;
-            // delete tokenOwners[from];
         } else {
             // Show the Approval
             if (getApproved(_tokenId) == to) {
                 tokenOwners[_tokenId] = to;
-                // delete tokenOwners[from];
             }
         }
     }
 
-    // Optimized safeTranserFrom function
-    // function safeTransferFrom2ndmethod(address from, address to, uint256 _tokenId) public {
-    //     require(pause == true, "Under Maintainence");
-    //     require(Approval[_tokenId] == to, "Sender doesn't own the token");
-    //     tokenOwners[_tokenId] == to;
-    //     // delete tokenOwners[from];
-    // }
-
     function approve(address to, uint256 _tokenId) public {
-        require(tokenOwners[_tokenId] == to, "Only token owner can approve this");
+        require(tokenOwners[_tokenId] == msg.sender, "Only token owner can approve this");
         Approval[_tokenId] = to;
         emit Approve(msg.sender, to, _tokenId);
     }
@@ -74,8 +71,6 @@ contract ERC721 {
     function getApproved(uint256 _tokenId) public view returns (address) {
         return Approval[_tokenId];
     }
-
-    // function burn() {}
 
     // getter functions
     function getTokenName() public view returns (string memory) {
@@ -98,9 +93,6 @@ contract ERC721 {
     }
 
     function getOwner(uint256 _tokenId) public view returns (address) {
-        return Approval[_tokenId];
+        return tokenOwners[_tokenId];
     }
-    // function getWhichTokeb(address user) public view returns (uint) {
-    //     return tokenOwners[user];
-    // }
 }
