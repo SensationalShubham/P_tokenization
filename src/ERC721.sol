@@ -49,6 +49,7 @@ contract ERC721 {
          * 
          * @dev If the msg.sender is other than the one who owns the token, then he/she must have to be in the Approve list before transferring the token. 
          */
+        
     function safeTransferFrom(address from, address to, uint256 _tokenId) public {
         require(pause == true, "Under Maintainence");
         if (msg.sender == from) {

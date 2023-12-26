@@ -1,66 +1,17 @@
-## Foundry
+# ERC 721 
+These type of contracts are used in making NFTs(non-fungible tokens). ERC721 itself has various types like Total supply, Mintable, Burnable etc.
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-Foundry consists of:
+Basic difference between ERC20 and ERC721 is that ERC20 is used for fungible tokens like Bitcoin but ERC721 is for Non-fungible meaning only one with unique attributes. 
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+I made this project for sharpening my solidity skills and think of it like a skeleton for ERC contracts.
 
-## Documentation
+## How AI helped me?
+As we know AI is taking jobs day by day in today's world so a developer's job is to find out how one can take advantage of it. 
+* I took advantage by using it as my guide all the time 
 
-https://book.getfoundry.sh/
+I asked Bard (Chat bot by Google) to tell me what is ERC contracts, what's their use and tell it to make a heirarchy of what it includes.
 
-## Usage
+* NOTE: I didn't copy paste even a single LOC from Bard, it's purely made by me.
 
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+ I instructed Bard to focus on Important concepts and teach them to me, telling my mistakes in my code etc.  
