@@ -7,7 +7,7 @@ import {Script} from "forge-std/Script.sol";
 contract deployERC721 is Script {
     string tokenName = "ShubhCoin";
     string tokenSymbol = "SC";
-    uint256 totalSupply = 100;
+    uint256 totalSupply = 10;
     uint256 decimal = 10**8;
     // ERC721 public erc721;
 
